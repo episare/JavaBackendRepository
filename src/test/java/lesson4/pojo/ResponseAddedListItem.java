@@ -25,22 +25,22 @@ import java.util.List;
 public class ResponseAddedListItem {
 
     @JsonProperty("id")
-    public Integer id;
+    private Integer id;
     @JsonProperty("name")
-    public String name;
+    private String name;
     @JsonProperty("measures")
-    public Measures measures;
+    private Measures measures;
     @JsonProperty("usages")
-    public List<Object> usages = new ArrayList<>();
+    private List<Object> usages = new ArrayList<>();
     @JsonProperty("usageRecipeIds")
-    public List<Object> usageRecipeIds = new ArrayList<>();
+    private List<Object> usageRecipeIds = new ArrayList<>();
     @JsonProperty("pantryItem")
-    public Boolean pantryItem;
+    private Boolean pantryItem;
     @JsonProperty("aisle")
-    public String aisle;
+    private String aisle;
     @JsonProperty("cost")
-    public Double cost;
+    private Double cost;
     @JsonProperty("ingredientId")
-    public Integer ingredientId;
+    private Integer ingredientId;
 
 }

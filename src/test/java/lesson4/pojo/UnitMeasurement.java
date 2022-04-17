@@ -15,8 +15,8 @@ import lombok.Data;
 public class UnitMeasurement {
 
     @JsonProperty("amount")
-    public Double amount;
+    private Double amount;
     @JsonProperty("unit")
-    public String unit;
+    private String unit;
 
 }

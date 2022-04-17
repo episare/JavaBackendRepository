@@ -56,7 +56,7 @@ public class ShoppingListTest extends BaseTest {
         System.out.println("\naddItemToShoppingListTest id: " + idShoppingList);
 
         assertNotNull(responseAddedListItem.getId());
-        assert (inputAddListItem.getItem().toLowerCase().contains(responseAddedListItem.name.toLowerCase()));
+        assert (inputAddListItem.getItem().toLowerCase().contains(responseAddedListItem.getName().toLowerCase()));
         assert (responseAddedListItem.getAisle().equals(inputAddListItem.getAisle()));
         assert (unitsList.contains(responseAddedListItem.getMeasures().getOriginal().getUnit()));
         assert (unitsList.contains(responseAddedListItem.getMeasures().getMetric().getUnit()));
