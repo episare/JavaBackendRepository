@@ -17,8 +17,8 @@ import lombok.Data;
 public class Aisle {
 
     @JsonProperty("aisle")
-    public String aisle;
+    private String aisle;
     @JsonProperty("items")
-    public List<Item> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 
 }

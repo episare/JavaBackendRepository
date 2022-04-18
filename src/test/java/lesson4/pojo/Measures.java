@@ -16,10 +16,10 @@ import lombok.Data;
 public class Measures {
 
     @JsonProperty("original")
-    public UnitMeasurement original;
+    private UnitMeasurement original;
     @JsonProperty("metric")
-    public UnitMeasurement metric;
+    private UnitMeasurement metric;
     @JsonProperty("us")
-    public UnitMeasurement us;
+    private UnitMeasurement us;
 
 }
