@@ -20,12 +20,12 @@ import java.util.List;
 public class ResponseGetListItems {
 
     @JsonProperty("aisles")
-    public List<Aisle> aisles = new ArrayList<>();
+    private List<Aisle> aisles = new ArrayList<>();
     @JsonProperty("cost")
-    public Double cost;
+    private Double cost;
     @JsonProperty("startDate")
-    public Integer startDate;
+    private Integer startDate;
     @JsonProperty("endDate")
-    public Integer endDate;
+    private Integer endDate;
 
 }

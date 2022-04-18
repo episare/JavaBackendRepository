@@ -1,4 +1,4 @@
-package lesson4.pojo;
+package lesson5.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,16 +9,19 @@ import lombok.Data;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "aisle",
-        "items"
+        "id",
+        "title",
+        "products"
 })
 
 @Data
-public class Aisle {
+public class GetCategoryResponse {
 
-    @JsonProperty("aisle")
-    private String aisle;
-    @JsonProperty("items")
-    private List<Item> items = new ArrayList<>();
+    @JsonProperty("id")
+    private Integer id;
+    @JsonProperty("title")
+    private String title;
+    @JsonProperty("products")
+    private List<Product> products = new ArrayList<Product>();
 
 }
