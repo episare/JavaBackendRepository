@@ -13,29 +13,36 @@ import java.io.InputStream;
 import java.util.List;
 
 public class ExampleMain {
+    static SqlSession sqlSession;
     public static void main(String[] args) throws IOException {
         String resource = "mybatisConfig.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
 
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        try {
+            sqlSession = sqlSessionFactory.openSession();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         CategoriesMapper categoriesMapper = sqlSession.getMapper(CategoriesMapper.class);
         CategoriesExample categoriesExample = new CategoriesExample();
 
-        categoriesExample.createCriteria().andIdEqualTo(1L);
+        categoriesExample.createCriteria().andIdEqualTo(1);
 
-//        List<Categories> list = categoriesMapper.selectByExample(categoriesExample);
-//        System.out.println(categoriesMapper.countByExample(categoriesExample));
+        List<Categories> list = categoriesMapper.selectByExample(categoriesExample);
+        System.out.println(categoriesMapper.countByExample(categoriesExample));
 
-        Categories selected = categoriesMapper.selectByPrimaryKey(2L);
+        Categories selected = categoriesMapper.selectByPrimaryKey(2);
         System.out.println("ID: " + selected.getId() + "\ntitle: " + selected.getTitle());
 
         Categories categories = new Categories();
- //       categories.setId(Long.valueOf(3));
         categories.setTitle("Test");
         categoriesMapper.insert(categories);
         sqlSession.commit();
+
+
     }
 
 }

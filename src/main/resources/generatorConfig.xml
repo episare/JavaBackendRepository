@@ -11,6 +11,11 @@
                         userId="postgres"
                         password="maxime">
         </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
         <javaModelGenerator targetPackage="lesson6.db.model"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
